@@ -25,7 +25,8 @@ studyNotes
   | 行1| 行1| 行1|
   | 行2| 行2| 行2|
 7. 代码
-```Function.prototype.method = function(name, func) {
+```
+Function.prototype.method = function(name, func) {
     if (!this.prototype[name]) {
         this.prototype[name] = func;
     }
@@ -58,4 +59,4 @@ var fibonacci = function() {
 
 for (var i = 0; i <= 40; i += 1) {
     console.log(i + ":" + fibonacci(i) + "\n");
-}```
+}

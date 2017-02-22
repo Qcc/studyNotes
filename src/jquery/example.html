@@ -12,11 +12,10 @@
         $(document).ready(function() {
             var d;
             $('.btn1').click(function() {
-                d = $('.add').css({
-                    'background-color': 'red',
-                    "height": "30px"
+                $('.p2').parent().css({
+                    width: "200px",
+                    height: "200px"
                 });
-                console.log(d.jquery);
             });
 
         });
@@ -24,8 +23,7 @@
 </head>
 
 <body>
-    <button class="btn1"> replaceAll</button>
-    <button class="btn2"> replaceWith</button>
+    <button class="btn1"> parent</button>
     <div>
         <p class="add">一些文字</p>
         <p class="p2">二些文字</p>

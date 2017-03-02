@@ -1,27 +1,45 @@
- <?php
- session_start();
- ob_start();
- define('TITLE','Login');
- include("temp/header.html");
+ <!DOCTYPE html>
+<html>
 
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
-     if((strtolower($_POST['email']) == 'kevin@kouton.com')
-     &&($_POST['password'] == '123456')){
-         print "登录成功";
-         setcookie("name","kevin");
-         echo $_COOKIE['name'];
+<head>
+    <meta charset="utf-8">
+    <title>页头</title>
  
-     }else{
-         print "用户名或密码错误！";
-     }
- }else{
-     print "<form action='login.php' method='POST'>
-        用户名：<input type='email' name='email'><br/>
-        密码：<input type='password' name='password'><br />
-        <input type='submit' value='提交'>
-     </form>";
- }
- include("temp/footer.html");
- ob_end_flush();
- ?>
- 
+</head>
+
+<body>
+ <?php
+  $search_dir = '.';
+$contents = scandir($search_dir);
+print '<h2>目录</h2><ul>';
+foreach($contents as $item){
+    if((is_dir($search_dir . '/' . $item)) && (substr($item,0,1) != '.')){
+        print "<li>$item</li>\n";
+    }
+}
+print "</ul>";
+print '<hr /><h2>所有文件</h2>
+<table cellpadding="2" cellspacing = "2" align="left">
+<tr>
+<td>文件名</td>
+<td>大小</td>
+<td>修改时间</td>
+</tr>';
+
+foreach($contents as $item){
+    if((is_file($search_dir . "/" . $item)) && (substr($item,0,1) !='.')){
+        $fs =filesize($search_dir . '/'. $item);
+        $lm = date('F j,Y',filemtime($search_dir . '/' . $item));
+        print "<tr>
+        <td>$item</td>
+        <td>$fs bytes</td>
+        <td>$lm</td>
+        </tr>\n";
+    }
+}
+print "</table>";
+  ?>
+
+</body>
+
+</html>

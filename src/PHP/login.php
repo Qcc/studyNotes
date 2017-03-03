@@ -37,7 +37,17 @@ foreach($contents as $item){
         </tr>\n";
     }
 }
-print "</table>";
+print "</table><br />";
+$ceil = 10;
+$fool =11;
+function calc($arg1,$arg2=21){
+    return  $arg1 += $arg2;
+
+}
+
+print calc($ceil,$fool);
+print calc($ceil);
+
   ?>
 
 </body>

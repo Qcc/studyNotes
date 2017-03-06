@@ -38,16 +38,10 @@ foreach($contents as $item){
     }
 }
 print "</table><br />";
-$ceil = 10;
-$fool =11;
-function calc($arg1,$arg2=21){
-    return  $arg1 += $arg2;
-
-}
-
-print calc($ceil,$fool);
-print calc($ceil);
-
+ 
+$ceil=array("a1","a2","a3");
+ 
+print in_array("a3",$ceil);
   ?>
 
 </body>

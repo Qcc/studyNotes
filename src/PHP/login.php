@@ -25,7 +25,7 @@ print '<hr /><h2>所有文件</h2>
 <td>大小</td>
 <td>修改时间</td>
 </tr>';
-
+ 
 foreach($contents as $item){
     if((is_file($search_dir . "/" . $item)) && (substr($item,0,1) !='.')){
         $fs =filesize($search_dir . '/'. $item);
@@ -39,9 +39,6 @@ foreach($contents as $item){
 }
 print "</table><br />";
  
-$ceil=array("a1","a2","a3");
- 
-print in_array("a3",$ceil);
   ?>
 
 </body>

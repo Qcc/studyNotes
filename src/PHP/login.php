@@ -9,7 +9,7 @@
 
 <body>
  <?php
-  $search_dir = '../../../cloudApp';
+  $search_dir = '../';
 $contents = scandir($search_dir);
 print '<h2>目录</h2><ul>';
 foreach($contents as $item){

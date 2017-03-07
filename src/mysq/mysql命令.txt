@@ -1,0 +1,24 @@
+mysql -host 服务器 -user 用户名 -password 密码 -database 数据库
+mysql -h -u -p -d;
+
+show databases;  //查看数据库
+use databaseName; //切换数据库
+show tables;  //查看数据库表
+\t file.txt ;//输出到文件
+status \s；  //查看服务器当前的运行状态
+show variables; //查看当前服务器变量列表
+show status;//查看系统信息
+show engines; //查看当前mysql支持的引擎
+
+create database DBName;//创建一个名交DBName的数据库
+deop DBName; //删除DBName数据库
+create table if not exists emploees (   //如果不存在（if not exists）就创建emploees表
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,  //无符号整型自增长ID字段
+    firstname VARCHAR(25) NOT NULL,  //char字符型字段 最大值25个字符
+    lastname VARCHAR(25) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    phone VARCHAR(10) NOT NULL, 
+    PRIMARY KEY(id)   //id为主键
+);  
+create table student select * from emploees; //基于emploees创建student表
+create table threeTable select  firstname,lastname from emploees; //基于emploees表的firstname,lastname列创建thressTable表

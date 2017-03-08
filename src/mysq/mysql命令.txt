@@ -53,3 +53,34 @@ grant... //创建用户权限
 revoke... //移除用户权限
 show grants for kevin@localhost //查看kevin@localhos 账户的权限
 show grants for current_user(); //查看当前账户权限
+
+//select 查询
+select * from 表名 //查询 表名 中所有的数据
+select columnName from 表名 //查询 表名中的 columnName 修改表字段
+select * from 表名 where columnName=[<>,>,<,>=,<=,between,like,in]
+//查询 表名 中指定列 colnumnName匹配值的字段。
+select * from 表名 where columnName='a' or[and] column='b'
+//查询 表名中指定列 或[与] 另外列 匹配的字段
+
+//排序
+SELECT column_name,column_name
+FROM table_name
+ORDER BY column_name,column_name ASC|DESC; //默认升序，DESC降序
+
+//插入
+//第一种形式无需指定要插入数据的列名，只需提供被插入的值即可：
+INSERT INTO table_name
+VALUES (value1,value2,value3,...);
+
+//第二种形式需要指定列名及被插入的值：
+INSERT INTO table_name (column1,column2,column3,...)
+VALUES (value1,value2,value3,...);
+
+//更新
+UPDATE table_name
+SET column1=value1,column2=value2,...
+WHERE some_column=some_value;
+
+//删除
+DELETE FROM table_name
+WHERE some_column=some_value;

@@ -1,0 +1,56 @@
+git init      初始化git仓库
+git add  file.js     提交文件到暂存区
+git commit -m "提交详细说明"   提交文件到仓库
+git status     查看git仓库状态
+git diff file.js   对比文件修改
+git log      查看提交记录
+git log --pretty=online   查看简要记录
+git reset --hard HEAD^    退回到仓库记录 HEAD~10 返回前10次提交前
+git reset --hard 00121245412df   退回到指定的提交记录
+git reflog    查看提交记录
+git diff HEAD -- file.js  对比暂存区文件
+git checkout --file.js    丢弃工作区文件修改
+git reset HEAD file.js    撤回暂存区文件修改
+git rm file.js   删除文件，删除后提交，或者恢复。
+
+ssh-keygen -t rsa -C "kevin.e@qq.com"   获得ssh密钥 
+git push 推送到远端
+git pull 从远端获取同步
+git remote add origin git@github.com:qcc/cloudshare.git   关联github远程仓库
+git remote remove origin  删除origin仓库
+git push origin master  推送到远端仓库
+
+git branch name 创建name分支
+git checkout name 切换到name分支  
+git checkout -b name 创建并切换到name分支
+git branch 查看当前分支状况
+git merge name 合并name分支到当前分支
+git branch -d name 删除name分支
+
+git merge name 合并mane分支到当前分支，需要解决冲突
+git log --graph --pretty=oneline --abbrev-commit 查看合并log
+git merge --no-ff -m "merge with no-ff" dev   禁用Fast forward 可以查看分支合并历史
+
+git stash 保存当前工作区
+git stash pop 恢复工作区，并删除临时存储内容
+git stash list 查看临时保存工作区记录
+git stash apply 恢复工作区，
+git stash drop 清空临时存储工作区
+
+git branch -D name 强制删除未被合并过的分支
+
+git remote 查看远程仓库
+git remote -v 查看远程仓库详细信息
+git push origin master 推送master分支到远程仓库
+git pull 推送失败的话先抓取远程的分支
+git checkout -b branchName origin/branchName 在本地创建本地分支和远程分支，名称一致
+git branch --set-upstream branchName origin/branchName  关联本地和远程分支
+git pull 再抓取分支
+git tag -a v0.1.1 -m "说明" 在当前分支添加标签
+git tag 显示标签
+git show tag v0.1.1 显示标签详细信息
+git push origin v0.1.1 将标签提交到远程库
+git push prigin -tags  提交本地所有标签
+git tag -d v0.1.1 删除v0.1.1标签
+git push origin :refs/tags/v0.1.1 删除远程标签v0.1.1
+ 

@@ -1,15 +1,24 @@
+//连接数据库
 mysql -host 服务器 -user 用户名 -password 密码 -database 数据库
 mysql -h -u -p -d;
 
+//设置root用户密码
+mysql -u root
+set password for root%localhost=password('新密码');
+flush privileges;
+
+//查看数据库
 show databases;  //查看数据库
 use databaseName; //切换数据库
 show tables;  //查看数据库表
+show columns in 表名; //查看当前表结构
 \t file.txt ;//输出到文件
 status \s；  //查看服务器当前的运行状态
 show variables; //查看当前服务器变量列表
 show status;//查看系统信息
 show engines; //查看当前mysql支持的引擎
 
+//创建数据库及表
 create database DBName;//创建一个名交DBName的数据库
 deop DBName; //删除DBName数据库
 create table if not exists emploees (   //如果不存在（if not exists）就创建emploees表
@@ -21,4 +30,26 @@ create table if not exists emploees (   //如果不存在（if not exists）就�
     PRIMARY KEY(id)   //id为主键
 );  
 create table student select * from emploees; //基于emploees创建student表
-create table threeTable select  firstname,lastname from emploees; //基于emploees表的firstname,lastname列创建thressTable表
+create table threeTable select  firstname,lastname from emploees; 
+//基于emploees表的firstname,lastname列创建thressTable表
+create temporary table emp_temp select firstname,lastname from emploees;
+//基于emploees表的firstname,lastname列创建emp_temp临时表
+
+//删除数据库表;
+drop table 表名;  //删除表
+drop table 表名,表名;  //删除多个表
+
+//修改表字段
+alter table emploees add column 生日 date; //emploees表结尾添加生日字段
+alter table emploees drop  生日;  //删除生日列
+alter table emploees add cloumn 生日 date after email;  //emploees表添加生日字段，添加到email字段后面
+alter table emploees change 生日 生日 date not null; //修改emploees表生日字段，生日字段不为空
+
+//用户管理
+create user kevin@localhost identified by ‘123’;//创建用户kevin@localhos 密码为123
+drop user kevin@localhost; //删除kevin@localhost账户
+rename user kevin@localhost to ctbs@localhost; //重命名用户名
+grant... //创建用户权限
+revoke... //移除用户权限
+show grants for kevin@localhost //查看kevin@localhos 账户的权限
+show grants for current_user(); //查看当前账户权限

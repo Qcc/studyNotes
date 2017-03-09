@@ -25,7 +25,7 @@ create table if not exists emploees (   //如果不存在（if not exists）就�
     id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,  //无符号整型自增长ID字段
     firstname VARCHAR(25) NOT NULL,  //char字符型字段 最大值25个字符
     lastname VARCHAR(25) NOT NULL,
-    email VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL unique, //邮箱必须唯一
     phone VARCHAR(10) NOT NULL, 
     PRIMARY KEY(id)   //id为主键
 );  

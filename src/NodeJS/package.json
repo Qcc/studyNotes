@@ -1,0 +1,18 @@
+{
+  "name": "study_node",
+  "version": "1.0.1",
+  "description": "node study",
+  "main": "www.appcloud.com",
+  "scripts": {
+    "test": "test node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.com/qcc"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "kevin",
+  "license": "MIT"
+}

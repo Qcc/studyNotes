@@ -3,9 +3,10 @@ window.onload = function() {
 }
 
 function run() {
+    var parent = document.getElementById('root');
     var div = document.createElement('div');
     var h1 = document.createElement('h1');
-    h1.innerHTML = 'javascript';
+    h1.innerHTML = 'H1javascript';
     div.appendChild(h1);
-    document.appendChild(div);
+    parent.appendChild(div);
 }

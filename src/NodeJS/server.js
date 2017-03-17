@@ -3,15 +3,17 @@ var http = require("http"),
     path = require("path"),
     fs = require("fs");
 http.createServer(function(req, res) {
+    // console.log(req.url);
     var pathname = __dirname + url.parse(req.url).pathname;
     if (path.extname(pathname) == "") {
-        pathname += "/";
+        pathname += 'index.html';
     }
     if (pathname.charAt(pathname.length - 1) == "/") {
         pathname += "index.html";
     }
-    path.exists(pathname, function(exists) {
-        if (exists) {
+    console.log(pathname);
+    fs.access(pathname, fs.constants.R_OK, function(err) {
+        if (!err) {
             switch (path.extname(pathname)) {
                 case ".html":
                     res.writeHead(200, { "Content-Type": "text/html" });
@@ -40,7 +42,8 @@ http.createServer(function(req, res) {
         } else {
             res.writeHead(404, { "Content-Type": "text/html" });
             res.end("<h1>404 Not Found</h1>");
+            console.log(" 找不到页面: " + pathname);
         }
     });
-}).listen(8080, "127.0.0.1");
+}).listen(8080, "192.168.200.100");
 console.log("Server running at http://127.0.0.1:8080/");

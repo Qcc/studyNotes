@@ -3,12 +3,31 @@
 
 <head>
     <meta charset="utf-8">
-    <title>javascript</title>
-    <script src="app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>前端路由实现</title>
 </head>
 
 <body>
-    <div id="root"></div>
+    <ul>
+        <li>
+            <a href="#/"></a>
+        </li>
+        <li><a href="#/home">主页</a></li>
+        <li><a href="#/about">详情页</a></li>
+    </ul>
+    <script type="text/javascript" src="router.js"></script>
+    <script type="text/javascript">
+        var content = document.querySelector('body');
+        Router.route('/', function() {
+            console.log("这是主页");
+        });
+        Router.route('/home', function() {
+            console.log("这是主页");
+        });
+        Router.route('/about', function() {
+            console.log("这是详情页");
+        });
+    </script>
 </body>
 
 </html>

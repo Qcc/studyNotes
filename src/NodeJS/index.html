@@ -4,28 +4,43 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>前端路由实现</title>
+    <title>JSONP跨域请求</title>
 </head>
 
 <body>
-    <ul>
-        <li>
-            <a href="#/"></a>
-        </li>
-        <li><a href="#/home">主页</a></li>
-        <li><a href="#/about">详情页</a></li>
-    </ul>
-    <script type="text/javascript" src="router.js"></script>
+    <p id="test-promise-log"></p>
     <script type="text/javascript">
-        var content = document.querySelector('body');
-        Router.route('/', function() {
-            console.log("这是主页");
-        });
-        Router.route('/home', function() {
-            console.log("这是主页");
-        });
-        Router.route('/about', function() {
-            console.log("这是详情页");
+        'use strict';
+
+        // 清除log:
+        var logging = document.getElementById('test-promise-log');
+        while (logging.children.length > 1) {
+            logging.removeChild(logging.children[logging.children.length - 1]);
+        }
+
+        // 输出log到页面:
+        function log(s) {
+            var p = document.createElement('p');
+            p.innerHTML = s;
+            logging.appendChild(p);
+        }
+        new Promise(function(resolve, reject) {
+            log('start new Promise...');
+            var timeOut = Math.random() * 2;
+            log('set timeout to: ' + timeOut + ' seconds.');
+            setTimeout(function() {
+                if (timeOut < 1) {
+                    log('call resolve()...');
+                    resolve('200 OK');
+                } else {
+                    log('call reject()...');
+                    reject('timeout in ' + timeOut + ' seconds.');
+                }
+            }, timeOut * 1000);
+        }).then(function(r) {
+            log('Done: ' + r);
+        }).catch(function(reason) {
+            log('Failed: ' + reason);
         });
     </script>
 </body>

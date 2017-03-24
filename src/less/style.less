@@ -1,0 +1,91 @@
+ /*编译 lessc styles.less > styles.css */
+ @import "style"; /*导入style.less文件，可省略后缀*/
+ @import "style1.css";/*导入style.css文件*/
+
+/*变量作用域 由内到外 */
+ @base: #f938ab;/*@符号定义变量*/
+.box {
+  color: @base;
+  border-color: lighten(@base, 30%); /*可使用函数*/
+  /*多层嵌套 &符号生成。box-content｛｝形式*/
+  &-content{
+    width:100%;
+  }
+   /*生成.box .title 形式，子元素*/
+  .title{
+    color:#ccc;
+  }
+}
+
+
+
+@base: #f938ab;
+.ellipsis_txt {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+.box {
+    color: @base;
+    .ellipsis_txt;/*混合.ellipsis_txt*/
+    /*或者
+    .ellipsis_txt();
+    */
+}
+
+
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+/*支持运算符*/
+#box{
+    color: #888 / 4;
+    background-color: @base-color + #111;
+    height: 100% / 2 + @filler;
+}
+
+
+/*模块*/
+#bundle {
+  .button {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover {
+      background-color: white
+    }
+  }
+  .tab { /**/ }
+  .citation { /**/ }
+}
+
+/* > 符号下面复用上面的一部分代码*/
+#header a {
+  color: orange;
+  #bundle > .button;
+}
+
+/* 函数
+color(string) 解析颜色,将代表颜色的字符串转换为颜色值
+convert(value,unit) 将数字从一种单位转换到另一种单位.第一个参数为带单位的数值,第二个参数为单位.
+ceil(number)向上取整
+floor(number)向下取整
+percentage(number)将浮点数转换为百分比字符串
+round(number)四舍五入取整
+sqrt(number)计算一个数的平方根,并原样保持单位
+pow(number,number)设第一个参数为A,第二个参数为B,返回A的B次方.
+mod(number,number)返回第一个参数对第二参数取余的结果.
+min(value1, ..., valueN)返回一系列值中最小的那个.
+max(value1, ..., valueN)返回一系列值中最大的那个.
+abs(number)计算数字的绝对值,并原样保持单位
+sin(number)正弦函数
+cos(number)余弦函数
+asin(number)反正弦函数.返回以弧度为单位的角度,区间在 -PI/2 到 PI/2之间.
+acos(number)反余弦函数.区间在 0 到 PI之间.
+tan(number)正切函数
+atan(number)反正切函数
+pi()返回圆周率 π (pi)
+isnumber(value)如果待验证的值为数字则返回 true,否则返回 false
+isstring(value)如果待验证的值是字符串则返回 true,否则返回 false
+iscolor(value)如果待验证的值为颜色则返回 true,否则返回 false
+*/

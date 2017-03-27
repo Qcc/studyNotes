@@ -1,6 +1,7 @@
 import React from 'react';
 import formProvider from '../utils/formProvider';
 import FormItem from '../components/FormItem';
+import HomeLayout from '../layouts/HomeLayout';
 
 class UserAdd extends React.Component{
 
@@ -28,6 +29,8 @@ class UserAdd extends React.Component{
         .then((res)=>{
             if(res.id){
                 alert('添加成功！');
+                this.context.router.push('/user/list');
+                return;
             }else{
                 alert('添加失败！');
             }
@@ -38,11 +41,7 @@ class UserAdd extends React.Component{
     render(){
         const{form:{name,age,gender},onFormChange} = this.props;
         return(
-            <div>
-                <header>
-                    <h1>添加用户</h1>
-                </header>
-                <main>
+            <HomeLayout title="添加用户">
                     <form onSubmit={(e)=>this.handleSubmit(e)}>
                         <FormItem label="用户名：" valid={name.valid} error={name.error}>
                         <input type="text" value={name.value} onChange={(e)=>onFormChange('name',e.target.value)}/>
@@ -65,10 +64,13 @@ class UserAdd extends React.Component{
                         <br/>
                         <input type="submit" value="提交"/>
                     </form>
-                </main>
-            </div>
+                </HomeLayout>
         );
     }
+}
+
+UserAdd.contextTypes = {
+    router:React.PropTypes.object.isRequired
 }
 
 UserAdd = formProvider({

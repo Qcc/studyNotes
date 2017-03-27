@@ -17,7 +17,26 @@ function formProvider(fields) {
                 formValid:false
             };
             this.handleValueChange = this.handleValueChange.bind(this);
+            this.serFormValues = this.setFormValues.bind(this);
         }
+
+        setFormValues(values){
+            if(!values){
+                return;
+            }
+            const {form} =this.state;
+            let newForm = {...form};
+            for(const field in form){
+                if(form.hasOwnProperty(field)){
+                    if(typeof values[field] !== 'undefind'){
+                        newForm[field] = {...newForm[field],value:values[field]};
+                    }
+                    newForm[field].valid = true;
+                }
+            }
+            this.setState({form:newForm});
+        }
+
         handleValueChange(fieldName,value){
             const{form}=this.state;
             const newFieldState={value,valid:true,error:''};
@@ -47,7 +66,14 @@ function formProvider(fields) {
         }
         render(){
             const{form,formValid} = this.state;
-            return <Comp{...this.props} form={form} formValid={formValid} onFormChange={this.handleValueChange} />
+            return (<Comp
+                {...this.props} 
+                form={form} 
+                formValid={formValid} 
+                onFormChange={this.handleValueChange}
+                serFormValues={this.serFormValues}
+                 />
+            );
         }
     }
 

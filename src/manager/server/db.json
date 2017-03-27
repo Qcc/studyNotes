@@ -23,30 +23,6 @@
       "age": 55,
       "gender": "male",
       "id": 10003
-    },
-    {
-      "name": "赵五",
-      "age": "55",
-      "gender": "female",
-      "id": 10004
-    },
-    {
-      "name": "胡五",
-      "age": "11",
-      "gender": "male",
-      "id": 10005
-    },
-    {
-      "name": "地方",
-      "age": "23",
-      "gender": "female",
-      "id": 10006
-    },
-    {
-      "name": "用户",
-      "age": "36",
-      "gender": "male",
-      "id": 10007
     }
   ],
   "book": [

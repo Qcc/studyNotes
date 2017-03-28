@@ -82,7 +82,7 @@ class UserEditor extends React.Component{
 
 UserEditor.contextTypes = {
     router:React.PropTypes.object.isRequired
-}
+};
 
 UserEditor = formProvider({
     name:{

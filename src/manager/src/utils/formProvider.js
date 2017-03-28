@@ -17,7 +17,7 @@ function formProvider(fields) {
                 formValid:false
             };
             this.handleValueChange = this.handleValueChange.bind(this);
-            this.serFormValues = this.setFormValues.bind(this);
+            this.setFormValues = this.setFormValues.bind(this);
         }
 
         setFormValues(values){
@@ -71,7 +71,7 @@ function formProvider(fields) {
                 form={form} 
                 formValid={formValid} 
                 onFormChange={this.handleValueChange}
-                serFormValues={this.serFormValues}
+                setFormValues={this.setFormValues}
                  />
             );
         }

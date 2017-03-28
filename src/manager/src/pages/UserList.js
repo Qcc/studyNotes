@@ -83,7 +83,7 @@ class UserList extends React.Component{
     }
 }
 
-UserList.contextType = {
+UserList.contextTypes = {
     router:React.PropTypes.object.isRequired
 };
 

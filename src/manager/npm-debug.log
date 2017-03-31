@@ -2,17 +2,17 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'run',
-1 verbose cli   'dev' ]
+1 verbose cli   'server' ]
 2 info using npm@3.10.10
 3 info using node@v6.9.3
-4 verbose run-script [ 'predev', 'dev', 'postdev' ]
-5 info lifecycle manager@1.0.0~predev: manager@1.0.0
-6 silly lifecycle manager@1.0.0~predev: no script for predev, continuing
-7 info lifecycle manager@1.0.0~dev: manager@1.0.0
-8 verbose lifecycle manager@1.0.0~dev: unsafe-perm in lifecycle true
-9 verbose lifecycle manager@1.0.0~dev: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;F:\dev\studyNotes\src\manager\node_modules\.bin;C:\Program Files (x86)\EASYLINK\CloudAppClient;C:\Program Files (x86)\Kingdee\CloudDepClient;C:\Program Files (x86)\KOUTON\CTBS Advanced Client683;C:\Program Files (x86)\KOUTON\CTBS Enhanced Client8;C:\Program Files (x86)\KOUTON\CloudAppClient2.1;C:\Program Files (x86)\KOUTON\CloudAppClient;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kevin\AppData\Roaming\npm
-10 verbose lifecycle manager@1.0.0~dev: CWD: F:\dev\studyNotes\src\manager
-11 silly lifecycle manager@1.0.0~dev: Args: [ '/d /s /c', 'roadhog server' ]
+4 verbose run-script [ 'preserver', 'server', 'postserver' ]
+5 info lifecycle manager@1.0.0~preserver: manager@1.0.0
+6 silly lifecycle manager@1.0.0~preserver: no script for preserver, continuing
+7 info lifecycle manager@1.0.0~server: manager@1.0.0
+8 verbose lifecycle manager@1.0.0~server: unsafe-perm in lifecycle true
+9 verbose lifecycle manager@1.0.0~server: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;F:\dev\studyNotes\src\manager\node_modules\.bin;C:\Program Files (x86)\EASYLINK\CloudAppClient;C:\Program Files (x86)\Kingdee\CloudDepClient;C:\Program Files (x86)\KOUTON\CTBS Advanced Client683;C:\Program Files (x86)\KOUTON\CTBS Enhanced Client8;C:\Program Files (x86)\KOUTON\CloudAppClient2.1;C:\Program Files (x86)\KOUTON\CloudAppClient;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kevin\AppData\Roaming\npm
+10 verbose lifecycle manager@1.0.0~server: CWD: F:\dev\studyNotes\src\manager
+11 silly lifecycle manager@1.0.0~server: Args: [ '/d /s /c', 'json-server server/db.json -w' ]
 12 verbose stack Error: kill ENOSYS
 12 verbose stack     at exports._errnoException (util.js:1022:11)
 12 verbose stack     at process.kill (internal/process.js:172:13)
@@ -24,7 +24,7 @@
 12 verbose stack     at Signal.wrap.onsignal (internal/process.js:199:44)
 13 verbose cwd F:\dev\studyNotes\src\manager
 14 error Windows_NT 6.1.7601
-15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "dev"
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "server"
 16 error node v6.9.3
 17 error npm  v3.10.10
 18 error code ENOSYS

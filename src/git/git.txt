@@ -29,6 +29,8 @@ git checkout -b name 创建并切换到name分支
 git branch 查看当前分支状况
 git merge name 合并name分支到当前分支
 git branch -d name 删除name分支
+git checkout -b dev origin/dev 切换到远程dev分支
+
 
 git merge name 合并mane分支到当前分支，需要解决冲突
 git log --graph --pretty=oneline --abbrev-commit 查看合并log

@@ -8,17 +8,14 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id ="app">
-      <my-component my-message='hello2'></my-component>
-    </div>
+    <div id ="app">{{message}}</div>
     <script>
-        Vue.component('my-component',{
-            props:['myMessage'],
-            template:'<div>{{this.myMessage}}</div>'
-        })
          new Vue({
-            el: '#app'
-        })
+            el: '#app',
+            data:{
+                message:'Hello Vue'
+            }
+        });
     </script>
 </body>
 </html>

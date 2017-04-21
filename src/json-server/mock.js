@@ -1,21 +1,23 @@
 let Mock =require('mockjs');
 let Random=Mock.Random;
-
-module.exports =function () {
-    var data = {
-        licTemp:[],
-        
-    }
-    for(let i=0;i<100;i++){
+const allRecord =100;
+module.exports = function () {
+    var root = {
+            licTemp:{"status":200,"errorCode":0,"message":"Success","moreInfo":"",allRecord:allRecord,entity:[]},
+        }
+    let products= ['云桌面','CTBS高级版','CTBS企业版'];
+    for(let i=1;i<allRecord;i++){
         let content = Random.cparagraph(0,10);
-        data.licTemp.push({
-            id:i,
-            title:Random.cword(8,20),
-            desc:content.substr(0,40),
-            tag:Random.cword(2,6),
-            views:Random.integer(100,500),
-            images:Random.image('88x31',Random.color(),Random.integer(1000,9999))
+        root.licTemp.entity.push({
+            id:i, //id
+            key: i, //key
+            cdkey: Random.guid().slice(4,23).toUpperCase(), //授权码
+            customer: `${Random.city()}${Random.cword(2,4)}有限公司`, //客户公司名称
+            product:products[Random.integer(0,2)], //产品
+            trial: Random.datetime(), //授权结束日期
+            license:Random.integer(1,120), //站点数
+            active:Random.boolean(), //是否已经激活
         });
-    }
-    return data;
+    }    
+    return root;
 }

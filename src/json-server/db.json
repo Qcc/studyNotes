@@ -1,0 +1,108 @@
+{
+ "licTemp":[
+    {
+        "key": 1,
+        "cdkey": "KT05-87DD-3D04-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:43:25",
+        "license":10,
+        "active":"已激活"
+    }, {
+        "key": 2,
+        "cdkey": "KT05-87FD-3AS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"CTBS高级版",
+        "trial": "2017年4月20日 14:49:45",
+        "license":3,
+        "active":"已激活"
+    }, {
+        "key": 3,
+        "cdkey": "KT05-87AD-3DS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:49:50",
+        "license":14,
+        "active":"已激活"
+    }, {
+        "key": 1,
+        "cdkey": "KT05-87DD-3D04-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:43:25",
+        "license":10,
+        "active":"已激活"
+    }, {
+        "key": 2,
+        "cdkey": "KT05-87FD-3AS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"CTBS高级版",
+        "trial": "2017年4月20日 14:49:45",
+        "license":3,
+        "active":"已激活"
+    }, {
+        "key": 3,
+        "cdkey": "KT05-87AD-3DS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:49:50",
+        "license":14,
+        "active":"已激活"
+    }, {
+        "key": 1,
+        "cdkey": "KT05-87DD-3D04-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:43:25",
+        "license":10,
+        "active":"已激活"
+    }, {
+        "key": 2,
+        "cdkey": "KT05-87FD-3AS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"CTBS高级版",
+        "trial": "2017年4月20日 14:49:45",
+        "license":3,
+        "active":"已激活"
+    }, {
+        "key": 3,
+        "cdkey": "KT05-87AD-3DS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:49:50",
+        "license":14,
+        "active":"已激活"
+    }, {
+        "key": 1,
+        "cdkey": "KT05-87DD-3D04-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:43:25",
+        "license":10,
+        "active":"已激活"
+    }, {
+        "key": 2,
+        "cdkey": "KT05-87FD-3AS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"CTBS高级版",
+        "trial": "2017年4月20日 14:49:45",
+        "license":3,
+        "active":"已激活"
+    }, {
+        "key": 3,
+        "cdkey": "KT05-87AD-3DS4-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"云桌面",
+        "trial": "2017年4月20日 14:49:50",
+        "license":14,
+        "active":"已激活"
+    }, {
+        "key": 4,
+        "cdkey": "KT15-87DD-3D04-B39F",
+        "customer": "深圳市沟通科技有限公司",
+        "product":"CTBS企业版",
+        "trial": "2017年4月20日 14:49:55",
+        "license":4,
+        "active":"已激活"
+    }]
+}

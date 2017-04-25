@@ -1,13 +1,14 @@
 let Mock =require('mockjs');
 let Random=Mock.Random;
-const allRecord =100;
 module.exports = function () {
     var root = {
-            licTemp:{"status":200,"errorCode":0,"message":"Success","moreInfo":"",allRecord:allRecord,entity:[]},
-        }
+            licTemp:{"status":200,"errorCode":0,"message":"Success","moreInfo":"","allRecord":100,entity:[]},
+            inven:{"status":200,"errorCode":0,"message":"Success","moreInfo":"",
+                    entity:{"cloudAppCount":245,"ctbsAdvCount":25,"ctbsEnterpriseCount":15}}
+    }
     let products= ['云桌面','CTBS高级版','CTBS企业版'];
     let active =['已激活','未激活'];
-    for(let i=1;i<allRecord;i++){
+    for(let i=1;i<100;i++){
         let content = Random.cparagraph(0,10);
         root.licTemp.entity.push({
             id:i, //id
@@ -19,6 +20,7 @@ module.exports = function () {
             license:Random.integer(1,120), //站点数
             active:active[Random.integer(0,1)], //是否已经激活
         });
-    }    
+    }
+
     return root;
 }

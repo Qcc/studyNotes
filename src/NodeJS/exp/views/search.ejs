@@ -1,0 +1,14 @@
+<h1>Tweet results for
+  <%= search %>
+</h1>
+<% if (results.length){ %>
+  <ul>
+    <% for(var i =0; i < results.length;i++){ %>
+      <li>
+        <%= results[i].name %> -
+          <%= results[i].loc_name %> - <em><%= results[i].created %></li>
+    <% } %>
+  </ul>
+  <% }else{ %>
+  <p>No results</p>
+  <% } %>

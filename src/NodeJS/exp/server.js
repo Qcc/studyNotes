@@ -1,22 +1,21 @@
-var express = require('express');
-var search = require('./search');
+function Todo() {
+  this.todos = [];
+}
 
-var app = express();
+Todo.prototype.add = function(item) {
+  if (!item) throw new Error('Todo#add requires an item');
+  this.todos.push(item);
+}
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-app.set('view option', { layout: false });
+Todo.prototype.deleteAll = function() {
+  this.todos = [];
+}
 
-app.get('/', function(req, res) {
-  res.render('index');
-});
+Todo.prototype.getCount = function() {
+  return this.todos.length;
+}
 
-app.get('/search', function(req, res, next) {
-  search(req.query.q, function(err, tweets) {
-    if (err) return next(err);
-    res.render('search', { results: tweets, search: req.query.q });
-  });
-});
-
-
-app.listen(3000);
+Todo.prototype.doAsync = function(cb) {
+  setTimeout(cb, 2000, true);
+}
+module.exports = Todo;

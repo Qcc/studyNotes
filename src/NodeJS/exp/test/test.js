@@ -1,39 +1,30 @@
+// var memdb = require('..');
+// var assert = require('assert');
+// describe('memdb', function() {
+//   describe('.save(doc)', function() {
+//     it('shoule save the document', function() {
+//       var pet = { name: 'Tobi' };
+//       memdb.save(pet);
+//       var ret = memdb.first({ name: 'Tobi' });
+//       assert(ret == pet);
+//     });
+//   });
+// });
+
+// var assert = require('assert');
+// describe('Array', function() {
+//   describe('#indexOf()', function() {
+//     it('should return -1 when the value is not present', function() {
+//       assert.equal(-1, [1, 2, 3].indexOf(4));
+//     });
+//   });
+// });
+// add.test.js
+var add = require('../add.js');
 var assert = require('assert');
-var Todo = require('../server');
-var todo = new Todo();
-var testsCompleted = 0;
 
-function deleteTest() {
-  todo.add('Delete me');
-  assert.equal(todo.getCount(), 1, '1 item should exist');
-  todo.deleteAll();
-  assert.equal(todo.getCount(), 0, 'No items should exits');
-  testsCompleted++;
-}
-
-function addTest() {
-  todo.deleteAll();
-  todo.add('Added');
-  assert.notEqual(todo.getCount(), 0, '1 item should exist');
-  testsCompleted++;
-}
-
-function doAsyncTest(cb) {
-  todo.doAsync(function(value) {
-    assert.ok(value, 'Callback should be passed true');
-    testsCompleted++;
-    cb();
+describe('加法函数的测试', function() {
+  it('1 加 1 应该等于 2', function() {
+    assert.equal(add(1, 1), 2, '1+1应该等于2');
   });
-}
-
-function throwsTest(cb) {
-  assert.throws(todo.add, /requires/);
-  testsCompleted++;
-}
-
-deleteTest();
-addTest();
-throwsTest();
-doAsyncTest(function() {
-  console.log('Complated ' + testsCompleted + ' tests');
 });

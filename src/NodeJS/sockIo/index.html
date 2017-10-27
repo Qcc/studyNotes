@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    Current server time is :<b><span id="time"></span></b>
+    <script>
+        var socket = io('http://127.0.0.1:8081');
+        socket.on('news', function(data) {
+            document.getElementById('time').innerHTML = data.toString();
+            socket.emit('my other event', {
+                my: 'data'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+extends ./bbb.jade
+
+block content
+ h1 first jade
+ p(style="color:red") second jade p 
+ a(href="www.baidu.com") baidu
+ input(type='checkbox' name='args' checked)
+ div(esc="<code>")
+ div(exc!="<code>")
+ -var classes =['faa','fcc','fdd']
+ a(class=classes)
+ a(class={active:false}) a1
+ a(class={active:true}) a2
+ -var friends = 10
+ case friends
+   when 0
+     p you have no friends
+   when 1
+     p you have 1 friends 
+   default
+     p you hace #{friends} friends
+ //dfsfsd
+ -for(var i=0;i<5;i++)
+   li Item
+ - var authorised =true
+ #user
+ if authorised
+    h2 Description
+    p.description
+    User has no description
+    why not add one
+ else 
+    h1 Description 

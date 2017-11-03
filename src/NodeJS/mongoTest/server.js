@@ -1,18 +1,36 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var MongoClient = require('mongodb').MongoClient;
+var DB_CONN_STR = 'mongodb://localhost:27017/kevin';
 
-var db = mongoose.connection;
-db.on('error',function(err){
-  console.log(err,'conneciton error');
-});
-db.once('open',function(){
-  console.log('mongodb connected...');
-  var kittySchema = mongoose.Schema({
-    name:String
+var  insertDate = function(db,cb){
+  var collection = db.collection('tb2');
+  var data = [{'name':'kevin','age':32},{'name':'kk','age':18}];
+  collection.insert(data,function(err,result){
+    if(err){
+      console.log(err,'insert is error');
+      return;
+    }
+    cb(result);
   });
-
-  var Kitten = mongoose.model('Kitten',kittySchema);
-  var silence = new Kitten({name:'Silence'});
-  console.log(silence.name);
-  
-});
+}
+var selectDate = function(db,cb){
+  var collection =db.collection('tb2');
+  var whereStr = {'name':'kevin'};
+  collection.find(whereStr).toArray(function(err,result){
+    if(err){
+      console.log(err,'select error');
+      return;
+    }
+    cb(result);
+  });
+}
+MongoClient.connect(DB_CONN_STR,function(err,db){
+  console.log('connect seccuse!');
+  //insertDate(db,function(result){
+  //  console.log(result);
+  //  db.close();
+  //});
+  selectDate(db,function(result){
+    console.log(result);
+    db.close();
+  });
+})

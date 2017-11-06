@@ -25,10 +25,10 @@ var selectDate = function(db,cb){
 }
 MongoClient.connect(DB_CONN_STR,function(err,db){
   console.log('connect seccuse!');
-  //insertDate(db,function(result){
-  //  console.log(result);
-  //  db.close();
-  //});
+  insertDate(db,function(result){
+   console.log(result);
+   db.close();
+  });
   selectDate(db,function(result){
     console.log(result);
     db.close();

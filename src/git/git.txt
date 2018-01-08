@@ -340,3 +340,6 @@ $ git stash pop
 
 # 生成一个可供发布的压缩包
 $ git archive
+
+# Visual Studio 配置github同步ID
+gits ded762eacb3c30f15c8a656e9fdc107a4cc6d70d

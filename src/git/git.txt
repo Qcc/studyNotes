@@ -343,3 +343,4 @@ $ git archive
 
 # Visual Studio 配置github同步ID
 gits ded762eacb3c30f15c8a656e9fdc107a4cc6d70d
+     aa9d94c19159bb0c3cd25419d98253c08f4038fd

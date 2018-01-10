@@ -344,3 +344,10 @@ $ git archive
 # Visual Studio 配置github同步ID
 gits ded762eacb3c30f15c8a656e9fdc107a4cc6d70d
      aa9d94c19159bb0c3cd25419d98253c08f4038fd
+     1a16f57b5eb5b9944626e7d964fc3f3b986b3955
+     
+GitHub Token: 1a16f57b5eb5b9944626e7d964fc3f3b986b3955
+GitHub Gist: 2bb04f4b97fc9452d8946e9495fb6358
+GitHub Gist Type: Secret
+
+Restarting Visual Studio Code may be required to apply color and file icon theme.

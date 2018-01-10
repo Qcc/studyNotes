@@ -351,3 +351,26 @@ GitHub Gist: 2bb04f4b97fc9452d8946e9495fb6358
 GitHub Gist Type: Secret
 
 Restarting Visual Studio Code may be required to apply color and file icon theme.
+
+CODE SETTINGS SYNC UPLOAD SUMMARY
+Version: 2.8.7
+--------------------
+GitHub Token: 4857eda2698acf6a4b029e0ce9e856498b72db2f
+GitHub Gist: d15262ec90f2f101eadf9c9647afb79f
+GitHub Gist Type: Secret
+
+Restarting Visual Studio Code may be required to apply color and file icon theme.
+--------------------
+Files Uploaded:
+
+Extensions Added:
+  bracket-pair-colorizer v0.10.10
+  code-settings-sync v2.8.7
+  html-snippets v0.2.1
+  output-colorizer v0.1.2
+  path-intellisense v1.4.2
+  vetur v0.11.3
+  vscode-fileheader v0.0.2
+  vscode-great-icons v2.1.22
+--------------------
+Done.

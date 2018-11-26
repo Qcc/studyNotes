@@ -15,3 +15,22 @@ if_query() - 判断指定的 GET 变量是否符合设置的值；
 if_uri() - 判断当前的 url 是否满足指定的 url；
 if_route_pattern() - 判断当前的路由是否包含指定的字符；
 if_uri_pattern() - 判断当前的 url 是否含有指定的字符；
+
+HTMLPurifier 本身就是一个独立的项目，运用『白名单机制』对 HTML 文本信息进行 XSS 过滤。
+composer require "mews/purifier:~2.0"
+php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"
+配置信息
+'HTML.Allowed' => 'div,em,a[href|title|style],ul,ol,li,p[style],br',
+'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,font-family',
+当客户端提交
+<a someproperty="somevalue" href="http://example.com" style="color:#ccc;font-size:16px">
+    文章内容<script>alert('Alerted')</script>
+</a>
+会被解析为
+<a href="http://example.com" style="font-size:16px">
+    文章内容
+</a>
+以下属性未指定会被过滤
+someproperty 未指定的 HTML 属性
+color 未指定的 CSS 属性
+script 未指定的 HTML 标签

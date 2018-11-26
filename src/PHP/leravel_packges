@@ -4,3 +4,7 @@ composer require "barryvdh/laravel-debugbar:~3.1" --dev
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 'enabled' => env('APP_DEBUG', false),
 
+动态添加class扩展
+composer require "hieu-le/active:~3.5"
+用法   $condition为true 添加$activeClass 否则添加$inactiveClass
+function active_class($condition, $activeClass = 'active', $inactiveClass = '')
